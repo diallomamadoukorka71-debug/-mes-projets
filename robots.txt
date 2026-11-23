@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diallomamadoukorka71-debug.github.io/-mes-projets/sitemap.xml
