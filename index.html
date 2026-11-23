@@ -2,108 +2,338 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#075b39">
-    <title>DMK 224 - Mes projets</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101426">
+<meta name="description" content="DMK 224 - Création de sites web, applications mobiles et solutions numériques.">
+<title>DMK 224 | Solutions numériques</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f5f3;
-            color: #222;
-        }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        header {
-            background: #075b39;
-            color: white;
-            padding: 35px 20px;
-            text-align: center;
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        header h1 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+body {
+  font-family: Arial, sans-serif;
+  background: #101426;
+  color: #ffffff;
+  line-height: 1.6;
+}
 
-        main {
-            max-width: 700px;
-            margin: 30px auto;
-            padding: 15px;
-        }
+header {
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #171d35;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-        .projet {
-            background: white;
-            padding: 22px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 3px 12px #0001;
-        }
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+  color: #65a5ff;
+}
 
-        .projet h2 {
-            color: #075b39;
-            margin-bottom: 12px;
-        }
+.logo span {
+  color: #ffffff;
+}
 
-        .projet p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 
-        .projet a {
-            display: inline-block;
-            background: #075b39;
-            color: white;
-            padding: 12px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-        }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #666;
-        }
-    </style>
+.hero {
+  padding: 90px 7%;
+  text-align: center;
+  background: linear-gradient(135deg, #14264e, #422c75);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 65px);
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #76b4ff;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  color: #d6dcef;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 25px;
+  background: #397de8;
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+section {
+  padding: 65px 7%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 35px;
+  color: #80b9ff;
+}
+
+.intro {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: #d0d6e5;
+  font-size: 17px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #1b2440;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #303d60;
+}
+
+.card h3 {
+  color: #80b9ff;
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #d0d6e5;
+}
+
+.card a {
+  color: #80b9ff;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.about {
+  background: #171d35;
+}
+
+.contact {
+  text-align: center;
+  background: linear-gradient(135deg, #202d52, #35245e);
+}
+
+.contact p {
+  color: #e0e5f2;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #090d19;
+  color: #aab3c9;
+  font-size: 14px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 22px;
+  right: 18px;
+  background: #20c66b;
+  color: white;
+  padding: 14px 19px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 15px #0008;
+  z-index: 10;
+}
+
+@media(max-width: 500px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 65px 6%;
+  }
+
+  section {
+    padding: 48px 6%;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>DMK 224</h1>
-    <p>Travailler pour réussir</p>
-    <p>Création d'applications et de sites web</p>
+  <div class="logo">DMK <span>224</span></div>
+
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#projets">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<main>
-    <div class="projet">
-        <h2>Académie Islamique Pulaar</h2>
-        <p>
-            Une bibliothèque d'enseignements islamiques
-            en langue Pulaar, accessibles par l'écoute.
-        </p>
-        <a href="https://academie-enseignements.web.app"
-           target="_blank">
-            Visiter l'application
-        </a>
+<div class="hero" id="accueil">
+  <h1>Bienvenue chez <span>DMK 224</span></h1>
+
+  <p>
+    Travailler pour réussir.
+    Nous créons des sites web, des applications
+    et des solutions numériques pour transformer
+    vos idées en projets concrets.
+  </p>
+
+  <a href="#services" class="btn">
+    Découvrir nos services
+  </a>
+</div>
+
+<section id="services">
+  <h2 class="section-title">Nos services</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>🌐 Sites web</h3>
+      <p>
+        Création de sites web modernes,
+        professionnels et adaptés aux téléphones.
+      </p>
     </div>
 
-    <div class="projet">
-        <h2>Nos futurs projets</h2>
-        <p>
-            Applications de restaurants, gestion commerciale
-            et solutions numériques pour les entreprises.
-        </p>
+    <div class="card">
+      <h3>📱 Applications</h3>
+      <p>
+        Développement d'applications web
+        et PWA installables sur Android.
+      </p>
     </div>
-</main>
+
+    <div class="card">
+      <h3>🏪 Gestion commerciale</h3>
+      <p>
+        Solutions pour gérer les ventes,
+        les stocks, les factures et les bénéfices.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>💡 Solutions numériques</h3>
+      <p>
+        Accompagnement des particuliers,
+        commerçants et petites entreprises.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="projets">
+  <h2 class="section-title">Nos réalisations</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>📚 Académie Islamique Pulaar</h3>
+      <p>
+        Une bibliothèque d'enseignements islamiques
+        en langue Pulaar, accessibles par l'écoute.
+      </p>
+      <a href="https://academie-enseignements.web.app"
+         target="_blank">
+        Visiter l'application →
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>🚀 Nos futurs projets</h3>
+      <p>
+        Applications de restaurants, plateformes
+        numériques, gestion commerciale et
+        solutions technologiques.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Pourquoi choisir DMK 224 ?</h2>
+
+  <div class="intro">
+    <p>
+      Notre ambition est de rendre la technologie
+      accessible à tous, de proposer des solutions
+      utiles et d'accompagner les entrepreneurs
+      dans leur transformation numérique.
+    </p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Travaillons ensemble</h2>
+
+  <p>
+    Vous avez une idée ou un projet numérique ?
+    Contactez-nous pour en discuter.
+  </p>
+
+  <a class="btn"
+     href="https://wa.me/221777815182"
+     target="_blank">
+    Contacter DMK 224 sur WhatsApp
+  </a>
+
+  <p style="margin-top:20px">
+    Création de projets sur devis.
+  </p>
+</section>
 
 <footer>
-    © 2026 DMK 224 - Tous droits réservés
+  <p>© 2026 DMK 224 - Tous droits réservés.</p>
+  <p>Travailler pour réussir.</p>
 </footer>
+
+<a class="whatsapp"
+   href="https://wa.me/221777815182"
+   target="_blank">
+  WhatsApp
+</a>
 
 </body>
 </html>
